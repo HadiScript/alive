@@ -17,7 +17,7 @@ const tex = (n, srgb = true) => { const t = loader.load(T + n); if (srgb) t.colo
 const PLANETS = [
   { id: 'mercury', name: 'Mercury', L0: 252.25084, n: 4.09233445, a: 0.387, km: 2440, rot: 58.65, tilt: 0.03, moons: 0, year: '88 days', day: '59 Earth days', fact: 'Smallest planet; a year is shorter than two of its days.' },
   { id: 'venus', name: 'Venus', L0: 181.97973, n: 1.60213034, a: 0.723, km: 6052, rot: -243, tilt: 177.4, moons: 0, year: '225 days', day: '243 Earth days (backwards)', fact: 'Hottest planet — thick CO₂ clouds trap heat at ~465 °C.', tex: 'venus_atmosphere.jpg' },
-  { id: 'earth', name: 'Earth', L0: 100.46435, n: 0.9856091, a: 1, km: 6371, rot: 0.997, tilt: 23.44, moons: 1, year: '365.25 days', day: '23 h 56 m', fact: 'Home — and Zinda island is down there somewhere.' },
+  { id: 'earth', name: 'Earth', L0: 100.46435, n: 0.9856091, a: 1, km: 6371, rot: 0.997, tilt: 23.44, moons: 1, year: '365.25 days', day: '23 h 56 m', fact: 'Home — and Alive island is down there somewhere.' },
   { id: 'mars', name: 'Mars', L0: 355.45332, n: 0.5240384, a: 1.524, km: 3390, rot: 1.026, tilt: 25.19, moons: 2, year: '687 days', day: '24 h 37 m', fact: 'Home of Olympus Mons, the tallest volcano in the solar system.' },
   { id: 'jupiter', name: 'Jupiter', L0: 34.40438, n: 0.08308529, a: 5.203, km: 69911, rot: 0.414, tilt: 3.13, moons: 95, year: '11.9 years', day: '9 h 56 m', fact: 'Its Great Red Spot is a storm larger than Earth.' },
   { id: 'saturn', name: 'Saturn', L0: 49.94432, n: 0.03346063, a: 9.537, km: 58232, rot: 0.444, tilt: 26.73, moons: 146, year: '29.5 years', day: '10 h 34 m', fact: 'Light enough to float in a (very large) bathtub.', ring: true },
@@ -124,7 +124,7 @@ export function createSpace(renderer, canvas) {
       const moon = new THREE.Mesh(new THREE.SphereGeometry(r * 0.27, 48, 24), new THREE.MeshStandardMaterial({ map: tex('moon.jpg'), roughness: 1 }));
       moon.position.x = r * 4.2;
       moon.castShadow = moon.receiveShadow = true;
-      moon.userData.body = { id: 'moon', name: 'The Moon', km: 1737, year: '27.3 days around Earth', day: 'Always shows Earth the same face', moons: 0, fact: 'Its gravity drives the tides on Zinda’s shores.' };
+      moon.userData.body = { id: 'moon', name: 'The Moon', km: 1737, year: '27.3 days around Earth', day: 'Always shows Earth the same face', moons: 0, fact: 'Its gravity drives the tides on Alive’s shores.' };
       moonOrbit.add(moon);
       moonOrbit.rotation.z = 5.1 * deg; // tilted to the ecliptic, not to Earth's equator
       centre.add(moonOrbit);

@@ -109,7 +109,7 @@ export function buildAirport(scene, airlinerModel) {
   roof.position.set(-55, Y - 1.5, -130);
   roof.castShadow = true;
   const sign = new THREE.Mesh(new THREE.PlaneGeometry(60, 5.5),
-    new THREE.MeshStandardMaterial({ map: signTexture('ZINDA INTERNATIONAL AIRPORT'), emissive: '#ffffff', emissiveIntensity: 0.1 }));
+    new THREE.MeshStandardMaterial({ map: signTexture('ALIVE INTERNATIONAL AIRPORT'), emissive: '#ffffff', emissiveIntensity: 0.1 }));
   sign.material.emissiveMap = sign.material.map;
   sign.position.set(-55, Y + 12.5, -117.9);
   term.add(terminal, roof, sign);

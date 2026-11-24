@@ -245,7 +245,7 @@ function finishLaunch() {
 let landing = false;
 function leaveSpace() {
   if (!inSpace || landing) return;
-  // dive towards Earth first, then drop through the clouds onto Zinda
+  // dive towards Earth first, then drop through the clouds onto Alive
   landing = true;
   space.flyTo(space.earth, space.earth.geometry.parameters.radius * 1.4);
   setTimeout(() => fade(() => {
@@ -265,7 +265,7 @@ function leaveSpace() {
 }
 
 // Seamless zoom: keep scrolling out past the sky and you're in space;
-// zoom right into Earth and you come back down to Zinda.
+// zoom right into Earth and you come back down to Alive.
 let wheelOut = 0;
 canvas.addEventListener('wheel', (e) => {
   if (!inSpace) {
@@ -476,7 +476,7 @@ function watchPerf() {
   composer.setSize(innerWidth, innerHeight);
   // shadows are the next biggest cost: refresh them every few frames instead
   if (perfLevel === 2) renderer.shadowMap.autoUpdate = false;
-  console.info(`[zinda] ${fps.toFixed(0)} fps → pixel ratio ${pr}`);
+  console.info(`[alive] ${fps.toFixed(0)} fps → pixel ratio ${pr}`);
 }
 
 // ---------- loop ----------
